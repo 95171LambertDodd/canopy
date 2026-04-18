@@ -15,7 +15,7 @@ services:
       - canopy-data:/root/.canopy
     environment:
       - CANOPY_ENV=production
-      - CANOPY_LOG_LEVEL=info
+      - CANOPY_LOG_LEVEL=debug
     networks:
       - canopy-net
 

@@ -18,6 +18,11 @@ services:
       - CANOPY_LOG_LEVEL=debug  # changed from info to debug for local learning/inspection
     networks:
       - canopy-net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"  # keep logs from eating disk space on my dev machine
+        max-file: "3"
 
   canopy-auto-update:
     build:

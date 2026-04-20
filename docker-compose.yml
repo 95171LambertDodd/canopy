@@ -15,7 +15,7 @@ services:
       - canopy-data:/root/.canopy
     environment:
       - CANOPY_ENV=production
-      - CANOPY_LOG_LEVEL=info
+      - CANOPY_LOG_LEVEL=debug  # changed from info to debug for local learning/inspection
     networks:
       - canopy-net
 
@@ -31,7 +31,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - canopy-data:/root/.canopy
     environment:
-      - UPDATE_INTERVAL=7200  # check every 2 hours instead of 1
+      - UPDATE_INTERVAL=86400  # check once a day; I update manually most of the time
       - CANOPY_CONTAINER=canopy-node
     networks:
       - canopy-net

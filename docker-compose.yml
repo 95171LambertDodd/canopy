@@ -22,13 +22,13 @@ services:
       driver: "json-file"
       options:
         max-size: "10m"  # keep logs from eating disk space on my dev machine
-        max-file: "3"
+        max-file: "5"    # bumped from 3 to 5 to retain a bit more log history for debugging
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 15s  # give the node time to initialize before health checks kick in
+      start_period: 30s  # increased from 15s; node was occasionally failing first health check on my slower machine
 
   canopy-auto-update:
     build:

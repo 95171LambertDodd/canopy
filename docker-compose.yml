@@ -23,6 +23,12 @@ services:
       options:
         max-size: "10m"  # keep logs from eating disk space on my dev machine
         max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s  # give the node time to initialize before health checks kick in
 
   canopy-auto-update:
     build:

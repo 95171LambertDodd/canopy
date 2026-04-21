@@ -28,7 +28,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 30s  # increased from 15s; node was occasionally failing first health check on my slower machine
+      start_period: 40s  # bumped further; my machine is particularly slow on cold starts
 
   canopy-auto-update:
     build:

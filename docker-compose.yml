@@ -28,7 +28,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s  # bumped further; my machine is particularly slow on cold starts
+      start_period: 60s  # bumped further; my machine is particularly slow on cold starts
 
   canopy-auto-update:
     build:
